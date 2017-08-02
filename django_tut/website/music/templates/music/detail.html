@@ -5,7 +5,7 @@
 {% block body %}
 <div class="container-fluid">
 	<div>
-		<img src="{{ album.logo }}" height=300 width=300>
+		<img src="{{ album.logo.url }}" height=300 width=300>
 		<h1>{{ album.title }}</h1>
 		<h3>{{ album.artist }}</h3>
 	</div>
@@ -14,18 +14,12 @@
 		<p><strong>{{ error_message }}</strong></p>
 	{% endif %}
 
-	<form action="{% url 'music:favourite' album.id %}" method="post">
-		{% csrf_token %}
 		{% for song in album.song_set.all %}
-			<input type="radio" id="song{{ forloop.counter }}" name="song" value="{{ song.id }}" />
-			<label for="song{{ forloop.counter }}">
 				{{ song.song_title }}
 				{% if song.is_favourite %}
-						<img src="https://cdn.dribbble.com/users/411234/screenshots/2427834/star_1x.png" height=20 width=20/>
+						<img src="http://pngimg.com/uploads/star/star_PNG1591.png" height=20 width=20/>
 				{% endif %}
-			</label><br>
-		{% endfor %}
-		<input type="submit" value="Favourite">
-	</form><br>
+				<br>
+				{% endfor %}
 </div>
 {% endblock %}
