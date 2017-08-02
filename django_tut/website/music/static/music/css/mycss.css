@@ -1,6 +1,12 @@
+
 .navbar{
 	border-radius:0;
 }
+
 .navbar-brand{
-	font-family: 'Rochester'
+	font-family: 'Rochester';
+}
+
+body{
+	background: url("../img/background.jpg");
 }

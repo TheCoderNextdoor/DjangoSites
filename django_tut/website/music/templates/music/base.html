@@ -6,7 +6,7 @@
 	{% load staticfiles %}
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="{% static 'music/js/bootstrap.min.js' %}"></script>
 	<link rel="stylesheet" type="text/css" href="{% static 'music/css/bootstrap.min.css' %}"/>
 	<link rel="stylesheet" type="text/css" href="{% static 'music/css/mycss.css' %}"/>
 	<link href="https://fonts.googleapis.com/css?family=Cabin|Rochester" rel="stylesheet">
@@ -51,7 +51,7 @@
 				
 				<ul class="nav navbar-right navbar-nav">
 					<li class="">
-						<a href="{% url 'music:index' %}">
+						<a href="{% url 'music:album-add' %}">
 							<span class="glyphicon glyphicon-plus" aria-hidden='true'></span>
 							Add Album
 						</a>
